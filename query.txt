@@ -1,0 +1,3 @@
+PREFIX : <http://www.semanticweb.org/peliculas#>
+
+SELECT ?n WHERE {?act a :Actor; :name ?n}

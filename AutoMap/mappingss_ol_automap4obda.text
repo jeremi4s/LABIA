@@ -1,0 +1,12 @@
+--- matcher Sun Aug 19 00:31:25 ART 2018 ----------
+
+CLS: AC Name{ Actor.Name} -  | 0.0
+   DP: Name{ Actor.Name} - 
+CLS: AC ID{ Actor.ID} -  | 0.0
+   DP: ID{ Actor.ID} - 
+CLS: Actor{ Actor.ID} - http://www.semanticweb.org/peliculas#Actor | 1.0
+   DP: ID{ Actor.ID} - http://www.semanticweb.org/peliculas#ID
+   DP: Name{ Actor.Name} - http://www.semanticweb.org/peliculas#name
+
+Total classes matched: 1
+Total data proprties matched: 2

@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.net/ontologies/peliculas.owl#"
+     xml:base="http://www.example.net/ontologies/peliculas.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.example.net/ontologies/peliculas.owl#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.net/ontologies/peliculas.owl#hasID -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.net/ontologies/peliculas.owl#hasID">
+        <rdfs:domain rdf:resource="http://www.example.net/ontologies/peliculas.owl#Actor"/>
+        <rdfs:range rdf:resource="http://www.example.net/ontologies/peliculas.owl#ID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.net/ontologies/peliculas.owl#hasName -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.net/ontologies/peliculas.owl#hasName">
+        <rdfs:domain rdf:resource="http://www.example.net/ontologies/peliculas.owl#Actor"/>
+        <rdfs:range rdf:resource="http://www.example.net/ontologies/peliculas.owl#Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.net/ontologies/peliculas.owl#ID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.net/ontologies/peliculas.owl#ID">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ID</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From_Actor-ID</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.example.net/ontologies/peliculas.owl#Actor"/>
+        <rdfs:domain rdf:resource="http://www.example.net/ontologies/peliculas.owl#ID"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.net/ontologies/peliculas.owl#Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.net/ontologies/peliculas.owl#Name">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From_Actor-Name</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.example.net/ontologies/peliculas.owl#Actor"/>
+        <rdfs:domain rdf:resource="http://www.example.net/ontologies/peliculas.owl#Name"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.net/ontologies/peliculas.owl#Actor -->
+
+    <owl:Class rdf:about="http://www.example.net/ontologies/peliculas.owl#Actor">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.net/ontologies/peliculas.owl#ID -->
+
+    <owl:Class rdf:about="http://www.example.net/ontologies/peliculas.owl#ID">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ID</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From_Actor-ID</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.net/ontologies/peliculas.owl#Name -->
+
+    <owl:Class rdf:about="http://www.example.net/ontologies/peliculas.owl#Name">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From_Actor-Name</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://www.example.net/ontologies/peliculas.owl#Name"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.example.net/ontologies/peliculas.owl#hasName"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://www.example.net/ontologies/peliculas.owl#ID"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.example.net/ontologies/peliculas.owl#hasID"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://www.example.net/ontologies/peliculas.owl#Actor"/>
+        <owl:onProperty rdf:resource="http://www.example.net/ontologies/peliculas.owl#hasName"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://www.example.net/ontologies/peliculas.owl#Actor"/>
+        <owl:onProperty rdf:resource="http://www.example.net/ontologies/peliculas.owl#hasID"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 1.3.8.1099) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,28 @@
+
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://www.benchmark.com/quest/> .
+@base <http://example.com/base/> .
+
+
+
+###########################################
+# TripleMap for 0: http://www.semanticweb.org/peliculas#Actor
+<mapping1_0> a rr:TriplesMap;
+	rr:logicalTable [ rr:sqlQuery "SELECT \"Actor\".\"ID\" AS \"actorid\", \"Actor\".\"Name\" AS \"actorname\" FROM public.\"Actor\"" ];
+	rr:subjectMap [	rr:template "http://www.automated-examples.com/resource/actor/{\"actorid\"}";
+		rr:class <http://www.semanticweb.org/peliculas#Actor>
+	];
+
+	rr:predicateObjectMap [ 
+		rr:predicate 	<http://www.semanticweb.org/peliculas#ID> ; 
+		rr:objectMap [ rr:column "actorid" ] 
+  	]; 
+
+	rr:predicateObjectMap [ 
+		rr:predicate 	<http://www.semanticweb.org/peliculas#name> ; 
+		rr:objectMap [ rr:column "actorname" ] 
+  	]; 
+
+.
+
